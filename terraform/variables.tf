@@ -21,7 +21,7 @@ variable "ami_id" {
   type        = string
   # Örnek: eu-central-1 için Amazon Linux 2023
   default     = "ami-0b5ef9f2109933fc7" 
-
+}
 variable "key_name" {
   description = "EC2 Key Pair adı (opsiyonel)"
   type        = string
