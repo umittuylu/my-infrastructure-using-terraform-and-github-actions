@@ -73,7 +73,7 @@ resource "random_id" "bucket_suffix" {
   byte_length = 4
 }
 
-resource "aws_s3_bucket_versioning" "my-app" {
+resource "aws_s3_bucket_versioning" "my-bucket" {
   bucket = aws_s3_bucket.my-app.id
   versioning_configuration {
     status = "Enabled"
@@ -81,7 +81,7 @@ resource "aws_s3_bucket_versioning" "my-app" {
 }
 
 
-resource "aws_s3_bucket_public_access_block" "my-app" {
+resource "aws_s3_bucket_public_access_block" "my-bucket" {
   bucket = aws_s3_bucket.my-app.id
 
   block_public_acls       = true
