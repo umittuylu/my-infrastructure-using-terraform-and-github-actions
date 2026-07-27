@@ -1,5 +1,4 @@
 
-# Security Group
 resource "aws_security_group" "ec2_sg" {
   name        = "${var.project_name}-ec2-sg"
   description = "Security group for EC2 instance"
@@ -13,7 +12,7 @@ resource "aws_security_group" "ec2_sg" {
     cidr_blocks = [var.allowed_ssh_cidr]
   }
 
-  
+  # HTTP (isteğe bağlı)
   ingress {
     description = "HTTP"
     from_port   = 80
@@ -22,7 +21,7 @@ resource "aws_security_group" "ec2_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  
+  # HTTPS (isteğe bağlı)
   ingress {
     description = "HTTPS"
     from_port   = 443
@@ -43,9 +42,6 @@ resource "aws_security_group" "ec2_sg" {
   }
 }
 
-# -----------------------------
-# EC2 Instance
-# -----------------------------
 resource "aws_instance" "web" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
@@ -72,16 +68,16 @@ resource "random_id" "bucket_suffix" {
   byte_length = 4
 }
 
-resource "aws_s3_bucket_versioning" "my-bucket" {
-  bucket = aws_s3_bucket.my-bucket.id
+
+resource "aws_s3_bucket_versioning" "app_bucket" {
+  bucket = aws_s3_bucket.app_bucket.id
   versioning_configuration {
     status = "Enabled"
   }
 }
 
-
-resource "aws_s3_bucket_public_access_block" "my-bucket" {
-  bucket = aws_s3_bucket.my-bucket.id
+resource "aws_s3_bucket_public_access_block" "app_bucket" {
+  bucket = aws_s3_bucket.app_bucket.id
 
   block_public_acls       = true
   block_public_policy     = true
