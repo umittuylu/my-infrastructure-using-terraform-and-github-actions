@@ -1,18 +1,4 @@
 # my-infrastructure-using-terraform-and-github-actions
-C:
-│   README.md
-│
-├───.github
-│   └───workflows
-│           my-infrastructure.yml
-│
-└───terraform
-        main.tf
-        outputs.tf
-        providers.tf
-        terraform.tfvars.example
-        variables.tf
-
 # AWS Infrastructure with Terraform & GitHub Actions
 
 This repository creates and manages AWS infrastructure using **Terraform**, and automates the deployment process with **GitHub Actions**.
