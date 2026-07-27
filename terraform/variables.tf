@@ -20,9 +20,12 @@ variable "ami_id" {
   description = "AMI ID (Amazon Linux 2023 önerilir)"
   type        = string
   # Örnek: eu-central-1 için Amazon Linux 2023
+<<<<<<< HEAD
   default = "ami-0c55b159cbfafe1f0" # kendi region'ına göre güncelle
+=======
+  default     = "ami-0acfa5dc12e39973f" 
+>>>>>>> 908c77312396b4c9f522a7a012c83a19db74a8df
 }
-
 variable "key_name" {
   description = "EC2 Key Pair adı (opsiyonel)"
   type        = string
