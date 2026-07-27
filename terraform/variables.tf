@@ -5,23 +5,23 @@ variable "aws_region" {
 }
 
 variable "project_name" {
-  description = "hope"
+  description = "Project name used for resource naming"
   type        = string
   default     = "hope"
 }
 
 variable "instance_type" {
-  description = "EC2 instance tipi"
+  description = "EC2 instance type"
   type        = string
   default     = "t3.micro"
 }
 
 variable "ami_id" {
-  description = "AMI ID)"
+  description = "AMI ID"
   type        = string
-  default     = "ami-0acfa5dc12e39973f" 
->>>>>>> 908c77312396b4c9f522a7a012c83a19db74a8df
+  default     = "ami-0acfa5dc12e39973f"
 }
+
 variable "key_name" {
   description = "EC2 Key Pair name"
   type        = string
@@ -29,7 +29,7 @@ variable "key_name" {
 }
 
 variable "allowed_ssh_cidr" {
-  description = "CIDR blocks allowed for SSH access""
+  description = "CIDR blocks allowed for SSH access"
   type        = string
   default     = "0.0.0.0/0"
 }
