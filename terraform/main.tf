@@ -12,7 +12,7 @@ resource "aws_security_group" "ec2_sg" {
     cidr_blocks = [var.allowed_ssh_cidr]
   }
 
-  # HTTP (isteğe bağlı)
+  # HTTP 
   ingress {
     description = "HTTP"
     from_port   = 80
@@ -21,7 +21,7 @@ resource "aws_security_group" "ec2_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # HTTPS (isteğe bağlı)
+  # HTTPS 
   ingress {
     description = "HTTPS"
     from_port   = 443
